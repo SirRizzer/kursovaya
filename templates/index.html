@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" action="get_file/" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="statistic_file">
+        <button type="submit">Upload</button>
+    </form>
+        {% if min_mark %}
+            <p>Минимальные баллы {{min_mark}}</p>
+        {% endif %}
+        {% if max_mark %}
+            <p>Максимальные баллы {{max_mark}}</p>
+        {% endif %}
+        {% if error_message %}
+            <p>{{error_message}}</p>
+        {% endif %}
+</body>
+</html>
